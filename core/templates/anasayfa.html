@@ -1,6 +1,20 @@
 {% extends "base.html" %}
+{% load static %}
 {% block baslik %}Hakkımızda{% endblock %}
 {% block icerik %}
 <h1>Anasayfa</h1>
 <p>Burası Anasayfa İçerik Alanı</p>
+
+  <div class="row">
+    <div class="col-md-4"> <div class="card">
+        <img src="{% static 'img/ben.jpeg' %}" class="card-img-top" alt="Görsel Yüklenemedi"/>
+        <div class="card-body">
+          <h5 class="card-title">Ömer Kazak</h5>
+          <p class="card-text">Profesyonel Backend Developer Adayı</p>
+          <a href="https://github.com/omerrkazakk" class="btn btn-primary" data-mdb-ripple-init>Tıkla</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
 {% endblock %}
