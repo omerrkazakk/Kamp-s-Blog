@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block baslik %}{{ title }}{% endblock %}
+
+{% block icerik %}
+
+<div class="container mt-5">
+    <h1>Yazarlarımız ({{yazarlar_sayi}})</h1>
+    <p class="text-muted">Blogumuza Katkı Sağlayan Değerli Yazarlarımız</p>
+
+    <div class="row">
+        {% for yazar in yazarlar %}
+        <div class="col-md-4 mb-4">
+            <div class="card text-center h-100">
+                <div class="card-body">
+                    <i class="bi bi-person-circle" style="font-size: 70px;"></i>
+                    <h5 class="card-title mt-3">{{ yazar.full_name }}</h5>
+                    <p class="text-muted">{{ yazar.title }}</p>
+                    <p class="card-text">{{ yazar.bio }}</p>
+                    <a href="{{ yazar.profile_url }}" class="btn btn-primary btn-sm">Profili Gör</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

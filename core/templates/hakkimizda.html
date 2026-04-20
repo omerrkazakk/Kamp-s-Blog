@@ -1,176 +1,252 @@
 {% extends "base.html" %}
+{% load static %}
 {% block baslik %}Hakkımızda{% endblock %}
 {% block icerik %}
+<style>
+.cv-container {
+    max-width: 1100px;
+}
 
-<section style="background-color: #1d88df;">
-  <div class="container py-5">
-    <div class="row">
-      <div class="col">
+.profile-img {
+    width: 120px;
+    border-radius: 50%;
+    border: 4px solid #4F46E5;
+}
+.social-links a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 12px;
+    border-radius: 8px;
+    color: #495057;
+    text-decoration: none;
+    transition: 0.3s;
+    margin-bottom: 8px;
+    background: #f8f9fa;
+}
+
+.social-links a i {
+    font-size: 1.2rem;
+    width: 20px;
+}
+
+/* hover efekt */
+.social-links a:hover {
+    background: #4F46E5;
+    color: #fff;
+    transform: translateX(5px);
+}
+.cv-card {
+    background: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    transition: 0.3s;
+}
+
+.cv-card:hover {
+    transform: translateY(-5px);
+}
+
+.section-title {
+    font-weight: 700;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    width: 40px;
+    height: 3px;
+    background: #4F46E5;
+    display: block;
+    margin-top: 5px;
+}
+
+
+.skill {
+    margin-bottom: 15px;
+}
+
+.skill-bar {
+    height: 8px;
+    background: #eee;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.skill-bar div {
+    height: 100%;
+    background: linear-gradient(90deg, #4F46E5, #4F46E5);
+    animation: load 1.5s ease;
+}
+
+@keyframes load {
+    from { width: 0; }
+}
+
+
+.skills span {
+    display: inline-block;
+    padding: 6px 12px;
+    margin: 5px;
+    background: #f1f3f5;
+    border-radius: 6px;
+    font-size: 0.8rem;
+}
+
+.btn-cv {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 2px solid #4F46E5;
+    color: #4F46E5;
+    border-radius: 8px;
+    transition: 0.3s;
+    text-decoration: none;
+}
+
+.btn-cv:hover {
+    background: #4F46E5;
+    color: #fff;
     
-      </div>
+}
+</style>
+
+<div class="container cv-container mt-5">
+
+    
+    <div class="text-center mb-5">
+        <img src="{% static 'img/ben.jpeg' %}" class="profile-img mb-3">
+        <h1 class="fw-bold">Ömer Kazak</h1>
+        <p class="text-muted">Junior Developer | Backend Developer</p>
     </div>
 
-    <div class="row">
-      <div class="col-lg-4">
-        <div class="card mb-4">
-          <div class="card-body text-center">
-            <im src="https://resmim.net/cdn/2026/03/26/CNV4jF.jpg" alt="avatar" 
-              class="rounded-circle img-fluid" style="width: 150px;">
-            <h5 class="my-3">Ömer Kazak</h5>
-            <p class="text-muted mb-1">Full Stack Developer</p>
-            <p class="text-muted mb-4">Samsun/Gaziantep</p>
-            <p class="text-muted mb-4">Samsun Üniversitesinde Okuyan Yazılıma Meraklı Bir Back-End Developer Öğrencisiyim</p>
-            <div class="d-flex justify-content-center mb-2">
-            
-            </div>
-          </div>
-        </div>
-        <div class="card mb-4 mb-lg-0">
-          <div class="card-body p-0">
-            <ul class="list-group list-group-flush rounded-3">
-              <li class="list-group-item d-flex justify-content-between align-items-center p-3">
-                <i class="fas fa-globe fa-lg text-warning"></i>
-                <p class="mb-0">https://omerkazak.com</p>
-              </li>
-              <li class="list-group-item d-flex justify-content-between align-items-center p-3">
-                <i class="fab fa-github fa-lg text-body"></i>
-                <p class="mb-0">omeerkazaak</p>
-              </li>
-              <li class="list-group-item d-flex justify-content-between align-items-center p-3">
-                <i class="fab fa-twitter fa-lg" style="color: #55acee;"></i>
-                <p class="mb-0">omerkazk</p>
-              </li>
-              <li class="list-group-item d-flex justify-content-between align-items-center p-3">
-                <i class="fab fa-instagram fa-lg" style="color: #ac2bac;"></i>
-                <p class="mb-0">omeerkazaak</p>
-              </li>
-              <li class="list-group-item d-flex justify-content-between align-items-center p-3">
-                <i class="fab fa-facebook-f fa-lg" style="color: #3b5998;"></i>
-                <p class="mb-0">kaazakomeer</p>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-8">
-        <div class="card mb-4">
-          <div class="card-body">
-            <div class="row">
-              <div class="col-sm-3">
-                <p class="mb-0">İsim</p>
-              </div>
-              <div class="col-sm-9">
-                <p class="text-muted mb-0">Ömer Kazak</p>
-              </div>
-            </div>
-            <hr>
-            <div class="row">
-              <div class="col-sm-3">
-                <p class="mb-0">Email</p>
-              </div>
-              <div class="col-sm-9">
-                <p class="text-muted mb-0">omerkazak1441@gmail.com</p>
-              </div>
-            </div>
-            <hr>
-            <div class="row">
-              <div class="col-sm-3">
-                <p class="mb-0">Telefon</p>
-              </div>
-              <div class="col-sm-9">
-                <p class="text-muted mb-0">+90 552 801 17 56</p>
-              </div>
-            </div>
-            <hr>
-            <div class="row">
-              <div class="col-sm-3">
-                <p class="mb-0">Mobil</p>
-              </div>
-              <div class="col-sm-9">
-                <p class="text-muted mb-0">+90 554 657 94 20</p>
-              </div>
-            </div>
-            <hr>
-            <div class="row">
-              <div class="col-sm-3">
-                <p class="mb-0">Adres</p>
-              </div>
-              <div class="col-sm-9">
-                <p class="text-muted mb-0">Türkmenler Mahallesi/Gaziantep/Şahinbey</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6">
-            <div class="card mb-4 mb-md-0">
-              <div class="card-body">
-                <p class="mb-4"><span class="text-primary font-italic me-1"></span> Bildiğim Diller
-                </p>
-                <p class="mb-1" style="font-size: .97rem;">HTML 5 ve CSS</p>
-                <div class="progress rounded" style="height: 5px;">
-                  <div class="progress-bar" role="progressbar" style="width: 80%" aria-valuenow="90"
-                    aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-                <p class="mt-4 mb-1" style="font-size: .77rem;">PYTHON</p>
-                <div class="progress rounded" style="height: 5px;">
-                  <div class="progress-bar" role="progressbar" style="width: 72%" aria-valuenow="72"
-                    aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-                <p class="mt-4 mb-1" style="font-size: .77rem;">DJANGO</p>
-                <div class="progress rounded" style="height: 5px;">
-                  <div class="progress-bar" role="progressbar" style="width: 89%" aria-valuenow="89"
-                    aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-                <p class="mt-4 mb-1" style="font-size: .77rem;">SQL SERVER</p>
-                <div class="progress rounded" style="height: 5px;">
-                  <div class="progress-bar" role="progressbar" style="width: 55%" aria-valuenow="55"
-                    aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-                <p class="mt-4 mb-1" style="font-size: .77rem;">MVC</p>
-                <div class="progress rounded mb-2" style="height: 5px;">
-                  <div class="progress-bar" role="progressbar" style="width: 66%" aria-valuenow="66"
-                    aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="card mb-4 mb-md-0">
-              <div class="card-body">
-                <p class="mb-4"><span class="text-primary font-italic me-1">assigment</span> 
-                </p>
-                <p class="mb-1" style="font-size: .77rem;"></p>
-                <div class="progress rounded" style="height: 5px;">
-                  <div class="progress-bar" role="progressbar" style="width: 80%" aria-valuenow="80"
-                    aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-                <p class="mt-4 mb-1" style="font-size: .77rem;"></p>
-                <div class="progress rounded" style="height: 5px;">
-                  <div class="progress-bar" role="progressbar" style="width: 72%" aria-valuenow="72"
-                    aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-                <p class="mt-4 mb-1" style="font-size: .77rem;"></p>
-                <div class="progress rounded" style="height: 5px;">
-                  <div class="progress-bar" role="progressbar" style="width: 89%" aria-valuenow="89"
-                    aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-                <p class="mt-4 mb-1" style="font-size: .77rem;">Mobile</p>
-                <div class="progress rounded" style="height: 5px;">
-                  <div class="progress-bar" role="progressbar" style="width: 55%" aria-valuenow="55"
-                    aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-                <p class="mt-4 mb-1" style="font-size: .77rem;">Backend API</p>
-                <div class="progress rounded mb-2" style="height: 5px;">
-                  <div class="progress-bar" role="progressbar" style="width: 66%" aria-valuenow="66"
-                    aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+<div class="card cv-card mb-4">
+    <h3 class="section-title">İletişim</h3>
+
+    <div class="social-links">
+
+        <a href="https://www.linkedin.com/in/omerkazak27/" target="_blank">
+            <i class="fab fa-linkedin"></i>
+            <span>LinkedIn</span>
+        </a>
+
+        <a href="https://github.com/omerrkazakk" target="_blank">
+            <i class="fab fa-github"></i>
+            <span>GitHub</span>
+        </a>
+
+        <a href="https://omerkazak.com" target="_blank">
+            <i class="fas fa-globe"></i>
+            <span>Website</span>
+        </a>
+
+        <a href="mailto:omerkazak1441@gmail.com">
+            <i class="fas fa-envelope"></i>
+            <span>Mail</span>
+        </a>
+
     </div>
-  </div>
-</section>
+</div>
+    <div class="row g-4">
+
+        
+        <div class="col-lg-8">
+
+            
+            <div class="card cv-card mb-4">
+                <h3 class="section-title">Kariyer Hikayem</h3>
+                <p>
+                    Analitik düşünen ve çözüm odaklı bir geliştirici olarak,
+                    karmaşık problemleri sade ve ölçeklenebilir çözümlere dönüştürmeyi seviyorum.
+                </p>
+            </div>
+
+            
+            <div class="card cv-card">
+                <h3 class="section-title">Deneyim</h3>
+
+                <div class="timeline-item">
+                    <h5>Samsun Üniversitesi</h5>
+                    <small class="text-muted">2025 - 2027</small>
+                    <p class="mt-2">Backend projeler geliştirerek pratik deneyim kazandım.</p>
+                </div>
+
+            </div>
+
+        </div>
+
+       
+        <div class="col-lg-4">
+
+            
+            <div class="card cv-card mb-4">
+                <h3 class="section-title">Yetenekler</h3>
+
+                <div class="skill">
+                    <span>HTML / CSS</span>
+                    <div class="skill-bar">
+                        <div style="width:90%"></div>
+                    </div>
+                </div>
+
+                <div class="skill">
+                    <span>Python</span>
+                    <div class="skill-bar">
+                        <div style="width:80%"></div>
+                    </div>
+                </div>
+                
+                <div class="skill">
+                    <span>Django</span>
+                    <div class="skill-bar">
+                        <div style="width:80%"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <span>Asp.Net</span>
+                    <div class="skill-bar">
+                        <div style="width:80%"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <span>SQL Server</span>
+                    <div class="skill-bar">
+                        <div style="width:85%"></div>
+                    </div>
+                </div>
+            </div>
+
+           
+            <div class="card cv-card mb-4">
+                <h3 class="section-title">Araçlar</h3>
+
+                <div class="skills">
+                    <span>Python</span>
+                    <span>Django</span>
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>Bootstrap</span>
+                    <span>SQL</span>
+                </div>
+            </div>
+
+           
+            <div class="card cv-card text-center">
+                <h3 class="section-title">CV</h3>
+
+                <a href="{% static 'cv/omer_kazak_cv.pdf' %}" class="btn btn-cv mt-3">
+                    CV'yi İndir
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+
 {% endblock %}

@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(180deg, #f8fafc, #eef2ff);
+    color: #1e293b;
+}
+
+.container {
+    max-width: 1100px;
+    margin-top: 40px;
+}
+
+.custom-navbar {
+    background: rgba(255,255,255,0.75);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    border-radius: 0 0 15px 15px;
+    padding: 12px 10px;
+}
+
+.navbar-brand {
+    font-weight: 600;
+    color: #111 !important;
+}
+
+.nav-link {
+    color: #444 !important;
+    margin: 0 6px;
+    position: relative;
+    transition: 0.3s;
+}
+
+.nav-link:hover {
+    color: #000 !important;
+}
+
+.nav-link::after {
+    content: '';
+    width: 0%;
+    height: 1px;
+    background: #6366f1;
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    transition: 0.25s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.nav-item.dropdown .nav-link::after {
+    display: none;
+}
+
+.nav-link.active {
+    color: #6366f1 !important;
+}
+
+.dropdown-menu {
+    border-radius: 12px;
+    border: none;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    opacity: 0;
+    transform: translateY(10px);
+    transition: 0.25s ease;
+    display: block;
+    visibility: hidden;
+}
+
+.nav-item.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+}
+
+.dropdown-item:hover {
+    background: #f1f5f9;
+    border-radius: 6px;
+}
+
+.search-input {
+    border-radius: 20px !important;
+    border: 1px solid #ddd !important;
+    padding: 6px 12px;
+}
+
+.btn-search {
+    background: #6366f1;
+    color: white;
+    border-radius: 20px;
+    border: none;
+    padding: 6px 15px;
+}
+
+.btn-search:hover {
+    background: #4f46e5;
+}
+
+.card, .cv-card {
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 25px;
+    border: none;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.07);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+}
+
+.section-title {
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.section-title::after {
+    content: '';
+    width: 40px;
+    height: 3px;
+    background: #6366f1;
+    display: block;
+    margin-top: 5px;
+    border-radius: 10px;
+}
+
+.profile-img {
+    width: 120px;
+    border-radius: 50%;
+    border: 3px solid #6366f1;
+}
+
+.btn, .btn-primary, .btn-cv {
+    background: #6366f1 !important;
+    border: none !important;
+    color: white !important;
+    border-radius: 10px;
+    padding: 10px 18px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #4f46e5 !important;
+    transform: scale(1.05);
+}
+
+input, textarea {
+    background: #f1f5f9 !important;
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 10px !important;
+    padding: 10px;
+    color: #1e293b !important;
+}
+
+input:focus, textarea:focus {
+    border-color: #6366f1 !important;
+    box-shadow: 0 0 0 3px rgba(99,102,241,0.2);
+    outline: none;
+}
+
+label {
+    font-weight: 500;
+}
+
+.social-links a {
+    background: #f1f5f9;
+    color: #1e293b;
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    gap: 10px;
+    transition: 0.3s;
+    margin-bottom: 8px;
+}
+
+.social-links a:hover {
+    background: #6366f1;
+    color: white;
+    transform: translateX(5px);
+}
+
+.skill-bar {
+    height: 8px;
+    background: #e2e8f0;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.skill-bar div {
+    background: #6366f1;
+    height: 100%;
+}
+
+.skills span {
+    background: #eef2ff;
+    padding: 6px 12px;
+    border-radius: 8px;
+    margin: 4px;
+    display: inline-block;
+}
+
+.hero {
+    background: linear-gradient(135deg, #6366f1, #818cf8);
+    color: white;
+    padding: 60px 30px;
+    border-radius: 20px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+footer {
+    background: #ffffff;
+    padding: 20px;
+    margin-top: 40px;
+    text-align: center;
+    color: #64748b;
+    border-top: 1px solid #e2e8f0;
+}
+
