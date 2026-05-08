@@ -1,8 +1,13 @@
 from django.shortcuts import render
 import core.models
+import blog.models
 
 def anasayfa (request):
-    return render(request, "anasayfa.html")
+    bloglar=blog.models.BlogPost.objects.all()
+    context={
+         "bloglar":bloglar
+    }
+    return render(request, "anasayfa.html",context)
 
 
 
@@ -51,6 +56,12 @@ def yazarlar(request):
     title="Ai Developer",
     bio="Yapay Zeka İle İlgileniyor.",
     profile_url="#"
+    ),
+    core.models.Author(
+    full_name="Onur Acar",
+    title="Front End Developer",
+    bio="Javascript İle Web Uygulamaları,Flutter İle Mobil Uygulamalar Geliştiriyor.",
+    profile_url="#"
     )
 
     ]
@@ -62,3 +73,4 @@ def yazarlar(request):
     }
 
     return render(request, 'yazarlar.html', context)
+   

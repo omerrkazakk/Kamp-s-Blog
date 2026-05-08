@@ -1,64 +1,27 @@
 {% extends "base.html" %}
 {% load static %}
-{% block baslik %}Hakkımızda{% endblock %}
+{% block baslik %}Anasayfa{% endblock %}
 {% block icerik %}
 
-
+<div class="container mt-4">
+  <h1 class="mb-4">Son Yazılar</h1>
   <div class="row">
-    <div class="col-md-4 mb-4"> <div class="card">
-        <img src="{% static 'img/django.jpeg' %}" class="card-img-top" alt="Görsel Yüklenemedi"/>
+    {% for post in bloglar %}
+    <div class="col-md-4 mb-4">
+      <div class="card h1-100">
+        <img src="{% static 'img/django.jpeg' %}" class="card-img-top" alt="Blog">
         <div class="card-body">
-          <h5 class="card-title">Django</h5>
-          <p class="card-text">Django Sayesinde Kullanıcı Etkileşimli Web Uygulamaları Yapıp Kullanıcı Kaydı Ürün Girişi Gibi Günüzmüzde Kullanılan Web Sayfalarından Yapabiliriz</p>
-          <a href="https://github.com/omerrkazakk" class="btn btn-primary" data-mdb-ripple-init>Tıkla</a>
+          <h5 class="card-title">{{ post.title }}</h5>
+          <p class="text-muted">{{ post.author_name }} - {{ post.views }} görüntülenme</p>
+          <p class="card-text">{{ post.summary }}</p>
+          <a href="{% url 'blog:blog_detay' id=post.id %}" class="btn btn-primary">Yazının Devamı...</a>
         </div>
       </div>
     </div>
-        <div class="col-md-4  mb-4"> <div class="card">
-        <img src="{% static 'img/python.jpg' %}" class="card-img-top" alt="Görsel Yüklenemedi"/>
-        <div class="card-body">
-          <h5 class="card-title">Python</h5>
-          <p class="card-text">Python Sayesinde Web Uygulamalrınızın Backend Tarafını Kolayca Halledebilir Bu Sayede Web Sitesinde Tüm İşlemleri Yapabiliriz</p>
-          <a href="https://github.com/omerrkazakk" class="btn btn-primary" data-mdb-ripple-init>Tıkla</a>
-        </div>
-      </div>
-    </div>    <div class="col-md-4  mb-4"> <div class="card">
-        <img src="{% static 'img/sql.png' %}" class="card-img-top" alt="Görsel Yüklenemedi"/>
-        <div class="card-body">
-          <h5 class="card-title">SQL Server</h5>
-          <p class="card-text">SQL Server İle Web  Sitemize SQL Server Veri Tabanı Ekleyerek Kullanıcı Kayıt İşlemleri Ürün Kayıt İşlemleri Gibi Tüm Kullanıcı Odaklı İşleri Kolayca Yapabiliriz.</p>
-          <a href="https://github.com/omerrkazakk" class="btn btn-primary" data-mdb-ripple-init>Tıkla</a>
-        </div>
-      </div>
-    </div>
+    {% endfor %}
   </div>
-<div class="row">
-    <div class="col-md-4  mb-4"> <div class="card">
-        <img src="{% static 'img/htmlcss.png' %}" class="card-img-top" alt="Görsel Yüklenemedi"/>
-        <div class="card-body">
-          <h5 class="card-title">HTML CSS</h5>
-          <p class="card-text">Web Sitesinin Tüm İşlemleri HTML İle Yapılır Kart Ekleme Form Ekleme Gibi CSS ise Web Sitesindeki Aryüzün Renklerini Boyutlarını Düzenlemek İçin Kullanırız.</p>
-          <a href="https://github.com/omerrkazakk" class="btn btn-primary" data-mdb-ripple-init>Tıkla</a>
-        </div>
-      </div>
-    </div>
-        <div class="col-md-4  mb-4"> <div class="card">
-        <img src="{% static 'img/javascript.jpg' %}" class="card-img-top" alt="Görsel Yüklenemedi"/>
-        <div class="card-body">
-          <h5 class="card-title">JavaScript</h5>
-          <p class="card-text">JavaScript İle HTML ve CSS te Yaptığımız Kodlara Etkileşim Kazandırırız Örneğin Tıkla Butonuna Baştığında Başarıyla Tıklandı Yazısı Gelip İlgili Bölüme Aktarır.</p>
-          <a href="https://github.com/omerrkazakk" class="btn btn-primary" data-mdb-ripple-init>Tıkla</a>
-        </div>
-      </div>
-    </div>    <div class="col-md-4  mb-4"> <div class="card">
-        <img src="{% static 'img/aspnet.webp' %}" class="card-img-top" alt="Görsel Yüklenemedi"/>
-        <div class="card-body">
-          <h5 class="card-title">Microsoft Asp.Net</h5>
-          <p class="card-text">Asp.Net MVC Mimarisi İle Web Uygulamaları Yazar Veri Tabanını Ekleyip Tüm İşlemleri Yapabiliriz.</p>
-          <a href="https://github.com/omerrkazakk" class="btn btn-primary" data-mdb-ripple-init>Tıkla</a>
-        </div>
-      </div>
-    </div>
-  </div>
+</div>
+
+
 
 {% endblock %}
