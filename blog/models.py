@@ -10,7 +10,7 @@ class BlogPost(models.Model):
 
     created_at=models.DateTimeField(auto_now_add=True)
     is_published=models.BooleanField(default=True)
-
+    static_url=models.CharField(max_length=200,default='img/default.png')
     def __str__(self):
         return self.title
 

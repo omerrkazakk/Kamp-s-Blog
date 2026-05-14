@@ -1,5 +1,72 @@
 {% extends "base.html" %}
-{% block baslik %}Detay{% endblock %}
+{% load static %}
+
+{% block baslik %}{{ yazi.title }} - Detay{% endblock %}
+
 {% block icerik %}
-<h1>{{yazi.title}}</h1>
+    <div class="row">
+        
+        <div class="col-lg-9 mb-4">
+            
+            <header class="mb-4">
+                <h1 class="fw-bolder mb-2 text-dark">{{ yazi.title }}</h1>
+            </header>
+
+            <figure class="mb-4">
+                <img class="img-fluid rounded shadow-sm w-100" 
+                     src="{% static yazi.static_url %}" 
+                     alt="{{ yazi.title }}" 
+                     style="max-height: 450px; object-fit: cover;">
+            </figure>
+
+            <section class="mb-4">
+                <p class="lead fw-bold text-secondary border-start border-4 border-primary ps-4 py-2 bg-light rounded-end">
+                    {{ yazi.summary }}
+                </p>
+            </section>
+
+            <section class="mb-5 text-dark" style="font-size: 1.1rem; line-height: 1.8;">
+                {{ yazi.content }}
+            </section>
+
+            <div class="mt-4 border-top pt-4">
+                <a href="/" class="btn btn-outline-primary rounded-pill px-4">
+                    &larr; Ana Sayfaya Dön
+                </a>
+            </div>
+
+        </div>
+
+        <div class="col-lg-3">
+            <div class="position-sticky" style="top: 2rem;">
+                
+                <div class="card mb-4 shadow-sm border-0 bg-light">
+                    <div class="card-body text-center">
+                        <div class="mb-3">
+                            <div class="d-inline-flex align-items-center justify-content-center bg-primary text-white rounded-circle" style="width: 60px; height: 60px; font-size: 24px;">
+                                &#128100;
+                            </div>
+                        </div>
+                        <h5 class="card-title fw-bold"><span class="text-muted">Yazar : </span>{{ yazi.author_name }}</h5>
+                    </div>
+                </div>
+
+                <div class="card mb-4 shadow-sm border-0">
+                    <div class="card-header bg-white fw-bold border-bottom-0 pt-3 pb-0">
+                        Yazı Bilgileri
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-unstyled mb-0">
+                            <li class="mb-2">
+                                <strong>Tarih:</strong> <span class="text-muted">{{ yazi.created_at }}</span>
+                            </li>
+                            <li>
+                                <strong> Görüntülenme:</strong> <span class="text-muted">{{ yazi.views }} Kez</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}

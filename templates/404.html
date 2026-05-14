@@ -1,20 +1,23 @@
 {% extends "base.html" %}
 {% load static %}
-
-{% block baslik %}Sayfa Bulunamadı - 404{% endblock %}
+{% block baslik %}404 - Sayfa Bulunamadı{% endblock %}
 
 {% block icerik %}
-<div >
-    <div>
-        <h1 style="font-size: 8rem; margin: 0; color: #e74c3c;">404</h1>
-        <h2 style="font-size: 2rem; margin-bottom: 20px; color: #2c3e50;">Eyvah! Yolunu mu kaybettin?</h2>
-        <p style="font-size: 1.1rem; color: #7f8c8d; max-width: 500px; margin: 0 auto 30px;">
-            Aradığın sayfa taşınmış, silinmiş veya hiç var olmamış olabilir. 
-            Endişelenme, aşağıdaki butona tıklayarak güvenli bölgeye dönebilirsin.
-        </p>
-        <a href="/" class="btn btn-primary btn-lg" style="display: inline-block; padding: 12px 30px; background-color: #3498db; color: white; text-decoration: none; border-radius: 5px; font-weight: bold; transition: background 0.3s;">
-            Ana Sayfaya Dön
-        </a>
+<div class="container mt-5 mb-5 text-center">
+    <div class="row justify-content-center">
+        <div class="col-md-8 py-5">
+            <h1 class="display-1 fw-bold text-primary">404</h1>
+            <h2 class="mb-4">Oops! Sayfa Bulunamadı.</h2>
+            
+            <p class="lead text-muted mb-5">
+                Aradığınız sayfa silinmiş, adı değiştirilmiş veya geçici olarak kullanım dışı olabilir. 
+                Lütfen URL'yi kontrol edin veya ana sayfaya geri dönün.
+            </p>
+            
+            <a href="/" class="btn btn-primary btn-lg">
+                Ana Sayfaya Dön
+            </a>
+        </div>
     </div>
 </div>
 {% endblock %}

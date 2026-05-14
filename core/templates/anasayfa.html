@@ -9,7 +9,7 @@
     {% for post in bloglar %}
     <div class="col-md-4 mb-4">
       <div class="card h1-100">
-        <img src="{% static 'img/django.jpeg' %}" class="card-img-top" alt="Blog">
+        <img src="{% static post.static_url %}" class="card-img-top" alt="Blog">
         <div class="card-body">
           <h5 class="card-title">{{ post.title }}</h5>
           <p class="text-muted">{{ post.author_name }} - {{ post.views }} görüntülenme</p>
