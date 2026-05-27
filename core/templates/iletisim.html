@@ -14,20 +14,20 @@
   <div class="row">
 
       <div class="col-md-9 mb-md-0 mb-5">
-          <form id="contact-form" name="contact-form" action="mail.php" method="POST">
+          <form id="contact-form" name="contact-form" action="{% url 'iletisim' %}" method="POST">{% csrf_token %}
 
               <div class="row">
                   <div class="col-md-6 mb-3">
                       <div>
                           <label for="name" class="form-label font-weight">Adınız Soyadınız</label>
-                          <input type="text" id="name" name="name" class="form-control">
+                          <input type="text" id="name" name="full_name" class="form-control">
                       </div>
                   </div>
 
                   <div class="col-md-6 mb-3">
                       <div>
                           <label for="email" class="form-label font-weight">Mail Adresiniz</label>
-                          <input type="text" id="email" name="email" class="form-control">
+                          <input type="text" id="email" name="e_mail" class="form-control">
                       </div>
                   </div>
               </div>
